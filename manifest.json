@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Stay Logged Out for ChatGPT",
+  "version": "1.4",
+  "description": "Automatically clicks the 'Stay logged out' link on ChatGPT's popup, with a toast confirmation.",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "https://chatgpt.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Auto Stay Logged Out (click to force)"
+  }
+}
